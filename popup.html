@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetLag</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== LOCK SCREEN ===== -->
+  <div id="lockScreen" class="lock-screen">
+    <div class="lock-screen__form">
+      <input type="password" id="passwordInput" class="lock-screen__input" autocomplete="off" spellcheck="false"
+        autofocus />
+      <button id="unlockBtn" class="lock-screen__btn">&gt;</button>
+    </div>
+    <div id="lockError" class="lock-screen__error"></div>
+  </div>
+
+  <!-- ===== MAIN APP (hidden until unlocked) ===== -->
+  <div id="mainApp" class="main-app main-app--hidden">
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="header__brand">
+        <span class="header__logo">WEBADVISOR</span>
+        <span class="header__version">v1.0</span>
+      </div>
+      <label class="toggle" title="Global Kill Switch">
+        <input type="checkbox" id="globalToggle" class="toggle__input" />
+        <span class="toggle__slider"></span>
+      </label>
+    </header>
+
+    <!-- ===== STATUS BAR ===== -->
+    <div class="status-bar">
+      <span id="statusDot" class="status-bar__dot"></span>
+      <span id="statusText">SYSTEM STANDBY</span>
+    </div>
+
+    <!-- ===== TARGET INPUT ===== -->
+    <section class="input-section">
+      <label class="input-section__label">+ Add Target Domain</label>
+      <div class="input-group">
+        <input type="text" id="domainInput" class="input-group__field" placeholder="example.com" autocomplete="off"
+          spellcheck="false" />
+        <button id="addBtn" class="input-group__btn">ADD</button>
+      </div>
+    </section>
+
+    <!-- ===== TARGET LIST ===== -->
+    <div id="targetList" class="target-list">
+      <p class="target-list__empty">No targets configured</p>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <span>WEBADVISOR // EDU TOOL</span>
+      <button id="changePwBtn" class="footer__pw-btn" title="Change password">🔒</button>
+      <span class="footer__warning">⚠ LOCAL USE ONLY</span>
+    </footer>
+
+    <!-- ===== CHANGE PASSWORD MODAL ===== -->
+    <div id="pwModal" class="pw-modal pw-modal--hidden">
+      <div class="pw-modal__content">
+        <div class="pw-modal__title">CHANGE PASSWORD</div>
+        <input type="password" id="pwOld" class="pw-modal__input" placeholder="Current password" />
+        <input type="password" id="pwNew" class="pw-modal__input" placeholder="New password" />
+        <input type="password" id="pwConfirm" class="pw-modal__input" placeholder="Confirm new password" />
+        <div id="pwModalError" class="pw-modal__error"></div>
+        <div class="pw-modal__actions">
+          <button id="pwSaveBtn" class="pw-modal__save">SAVE</button>
+          <button id="pwCancelBtn" class="pw-modal__cancel">CANCEL</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

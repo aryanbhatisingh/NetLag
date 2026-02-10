@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "WebAdvisor",
+    "version": "1.0.0",
+    "description": "Cybersecurity education tool — simulate network instability and DoS states for local testing.",
+    "permissions": [
+        "declarativeNetRequest",
+        "scripting",
+        "storage",
+        "activeTab",
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "WebAdvisor"
+    },
+    "icons": {}
+}
